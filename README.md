@@ -1,4 +1,5 @@
 # EuroTransit
+![Cover](cover.jpg)
 
 A cloud-native train-ticket marketplace built for the **Cloud Programming & Operations** capstone
 (team **g03**).
