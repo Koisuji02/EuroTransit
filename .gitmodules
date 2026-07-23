@@ -1,0 +1,6 @@
+[submodule "capstone-application-g03"]
+	path = capstone-application-g03
+	url = https://github.com/Koisuji02/capstone-application-g03.git
+[submodule "capstone-configuration-g03"]
+	path = capstone-configuration-g03
+	url = https://github.com/Koisuji02/capstone-configuration-g03.git
