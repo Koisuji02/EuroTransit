@@ -1,9 +1,21 @@
 # EuroTransit
 
 A cloud-native train-ticket marketplace built for the **Cloud Programming & Operations** capstone
-(team **g03**). It is a deliberately small but production-shaped system, designed to prove
-**operational behaviour under partial failure** — distributed design, consistency under contention,
-resilience engineering, and progressive delivery with full observability — rather than feature richness.
+(team **g03**).
+
+## Description
+
+EuroTransit is a Kubernetes-native train-ticket marketplace (browsing, booking, seat reservation and PayPal
+payments) built to prove operational behaviour under partial failure rather than feature richness. Six
+Kotlin/Spring Boot microservices behind a single Traefik ingress implement the pay-confirm-capture money path
+as a fully asynchronous, orchestrated Kafka saga, with a transactional outbox drained by Debezium CDC, a
+never-oversell seat-reservation invariant and idempotent exactly-once payments. The system ships via a
+two-repository GitOps model continuously reconciled by Argo CD on CloudNativePG-backed, Helm-templated
+services, with progressive delivery (canary and blue/green), SLOs with burn-rate alerts and a suite of chaos
+experiments. A React/Vite/TypeScript storefront provides Keycloak OAuth2 (PKCE) login and live saga tracking
+over SSE.
+
+## Repositories
 
 This is the **umbrella repository**. The system is split across two repositories, included here as git
 submodules, following a two-repository **GitOps** model:
